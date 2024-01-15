@@ -13,22 +13,23 @@ anova(fit)
 step(fit,test="F")
 
 fit <- lm(salary ~ PPG + TOPG + RPG + APG)
-
-
+summary(fit)
+anova(fit)
+step(fit,test="F")
 library(car)
 vif(fit)
 
 plot(salary~PPG)
 abline(fit,col="red")
 #A2-linearity
-
+plot(fit,which=1)
 
 #A3-homoscedasticity
 plot(residuals(fit)~PPG)
 plot(residuals(fit)~RPG)
 plot(residuals(fit)~TOPG)
 plot(residuals(fit)~APG)
-plot(fit,which = 1)
+plot(fit,which = 3)
 library(lmtest)
 gqtest(fit)
 #hetroscedasticity! variance increases from segment 1 to 2
@@ -38,6 +39,9 @@ plot(residuals(fit)~DF$...1)
 abline(h=0,col="red")
 acf(residuals(fit),main="")
 plot(fit,which = 3)
+library(randtests)
+runs.test(residuals(fit),alternative = "two.sided")
+# errors are independent!
 
 #A5-normality
 plot(fit,which = 2)
@@ -46,8 +50,6 @@ shapiro.test(resid(fit))
 
 
 
-library(randtests)
-runs.test(residuals(fit),alternative = "two.sided")
-# errors are independent!
+
 
 
