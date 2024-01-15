@@ -1,3 +1,9 @@
+library(data.table)
+library(corrplot)
+library(GGally)
+library(tidyverse)
+library(PerformanceAnalytics)
+library(plotly)
 attach(DF)
 variables <- 
   DF %>% 
@@ -35,7 +41,7 @@ gqtest(fit)
 #hetroscedasticity! variance increases from segment 1 to 2
 
 #A4-Independence of errors
-plot(residuals(fit)~DF$...1)
+plot(residuals(fit)~DF$...1,xlab="index" ,pch=16)
 abline(h=0,col="red")
 acf(residuals(fit),main="")
 plot(fit,which = 3)
