@@ -11,6 +11,10 @@ ggpairs(stats_salary)
 summary(fit)
 anova(fit)
 step(fit,test="F")
+
+fit <- lm(salary ~ PPG + TOPG + RPG + APG)
+
+
 library(car)
 vif(fit)
 
@@ -29,7 +33,7 @@ library(lmtest)
 gqtest(fit)
 #hetroscedasticity! variance increases from segment 1 to 2
 
-#A4-indepency of errors
+#A4-Independence of errors
 plot(residuals(fit)~DF$...1)
 abline(h=0,col="red")
 acf(residuals(fit),main="")
@@ -46,11 +50,4 @@ library(randtests)
 runs.test(residuals(fit),alternative = "two.sided")
 # errors are independent!
 
-n <- length(season17_18)
-Syy <- (n-1) * var(season17_18)
-new <- data.frame(PPG = 30,MPG = 40,RPG = 5,APG = 10)
-predict.lm(fit,new,interval = "prediction")
 
-
-qqPlot(PPG)
-norm(PPG)
