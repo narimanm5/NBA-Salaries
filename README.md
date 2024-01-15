@@ -1,8 +1,3 @@
-NBA Salaries is a linear regression analysis and modeling on NBA player's salaries based on their stats.
--step 1:
-I imported the datas that I downloaded from kaggle into python, cleaned and sorted them and removed the duplicates and players with missing data.
-then I extracted an excel file from python and named it "DF.xlsx"
--step 2:
-Then I imported the extracted excel file into R-Studio and began the linear regression modeling. 
-using anova and stepwise method i found out that only PPG,TOPG,RPG and APG coefficients are significant.
-using the graphical methods and hypothesis test, the data doesn't meet the OLS Assumptions 3 and 5 (homoscedasticity and normality of errors)
+"NBA Salaries is an in-depth data analysis project focused on using linear regression to model NBA player salaries based on their performance statistics. The project began with the importation of data from Kaggle, followed by cleaning, sorting, and eliminating duplicates and incomplete player information in Python. Subsequently, an Excel file named 'DF.xlsx' was extracted from the processed data.
+
+The analysis then transitioned to R-Studio, where a detailed linear regression modeling process was initiated. Utilizing ANOVA and a stepwise method, it was discovered that only PPG, TOPG, RPG, and APG coefficients held significant correlations with player salaries. However, further examination using graphical methods and hypothesis testing revealed that the data did not adhere to Ordinary Least Squares (OLS) Assumptions 3 and 5, pertaining to homoscedasticity and normality of errors respectively."
